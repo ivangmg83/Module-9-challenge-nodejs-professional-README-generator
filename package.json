@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ivangmg83/Module-9-challenge-nodejs-professional-README-generator/issues"
   },
-  "homepage": "https://github.com/ivangmg83/Module-9-challenge-nodejs-professional-README-generator#readme"
+  "homepage": "https://github.com/ivangmg83/Module-9-challenge-nodejs-professional-README-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
