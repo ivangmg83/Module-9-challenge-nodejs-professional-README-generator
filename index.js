@@ -1,10 +1,41 @@
-// TODO: Include packages needed for this application
+const inquirer = require('inquirer');
+const fs = require('fs');
 
-// TODO: Create an array of questions for user input
-const questions = [];
+inquirer
+  .prompt([
+{
+    type:"input",
+    name:"firstName",
+    message:"What's your first name?"
+},
+{
+    type:"input",
+    name:"lastName",
+    message:"What's your last name?"
+},
+{
+    type:"list",
+    name:"favoriteLanguage",
+    message:"What's your favorite Language?",
+    choices:["HTML", "JS", "PYTHON", "SWIFT"]
+}
+  ])
+  .then((answers) => {
+    console.log(answers)
+    // Use user feedback for... whatever!!
+    writeAnswersToFile(answers);
+  })
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+  const writeAnswersToFile= (userAnswers)=>{
+    const initialData = `First name: ${userAnswers.firstName} \nLast name: ${userAnswers.lastName} \nFavorite Language: ${userAnswers.favoriteLanguage}`
+    fs.writeFile(
+        'userAnswers.md', 
+        initialData, 
+    (error)=>error?console.log(error):console.log("success")
+    )
+  }
+
+  console.log('test inputs')
 
 // TODO: Create a function to initialize app
 function init() {}
