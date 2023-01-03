@@ -5,40 +5,68 @@ inquirer
   .prompt([
 {
     type:"input",
-    name:"firstName",
-    message:"What's your first name?"
+    name:"title",
+    message:"What is the title of your project?"
 },
 {
     type:"input",
-    name:"lastName",
-    message:"What's your last name?"
+    name:"description",
+    message:"Provide a project description"
+},
+{
+    type:"input",
+    name:"installation",
+    message:"What steps are needed to install your project"
+},
+{
+    type:"input",
+    name:"usage",
+    message:"What is the usage for your project?"
+},
+{
+    type:"input",
+    name:"contributions",
+    message:"What guidelines must other follow in order to contribute?"
+},
+{
+    type:"input",
+    name:"tests",
+    message:"WHow do you test this project?"
 },
 {
     type:"list",
-    name:"favoriteLanguage",
-    message:"What's your favorite Language?",
-    choices:["HTML", "JS", "PYTHON", "SWIFT"]
-}
+    name:"license",
+    message:"What license does your project use?",
+    choices:["None", "Apache 2.0", "MIT", "Mozilla"]
+},   
+{
+    type:"input",
+    name:"githubName",
+    message:"What is your Github username so others can reach you for questions?"
+},
+{
+    type:"input",
+    name:"email",
+    message:"What is your email so there is another way to be reached for questions?"
+},
   ])
   .then((answers) => {
     console.log(answers)
-    // Use user feedback for... whatever!!
     writeAnswersToFile(answers);
   })
 
   const writeAnswersToFile= (userAnswers)=>{
-    const initialData = `First name: ${userAnswers.firstName} \nLast name: ${userAnswers.lastName} \nFavorite Language: ${userAnswers.favoriteLanguage}`
+    const initialData = `# ${userAnswers.title} 
+    \n## Descrption \n### ${userAnswers.description}
+    \n## Installation \n### ${userAnswers.installation}
+    \n## Usage \n### ${userAnswers.usage}
+    \n## Contributions \n### ${userAnswers.description}
+    \n## Tests \n### ${userAnswers.tests}
+    \n## ${userAnswers.license}
+    \n## Questions \n### ${userAnswers.githubName} \n### Or \n### ${userAnswers.email}`
     fs.writeFile(
-        'userAnswers.md', 
+        'README.md', 
         initialData, 
     (error)=>error?console.log(error):console.log("success")
     )
   }
-
-  console.log('test inputs')
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
