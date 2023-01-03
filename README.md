@@ -1,10 +1,21 @@
-# asdf 
+# Readme Generator 
+    
+## MIT ![GitHub license](https://img.shields.io/aur/license/professional-readme-generator) 
+### https://choosealicense.com/licenses/mit/
+    
+## Table of contents: 
+### * [License](#license) 
+### * [Installation](#instalacion)
+### * [Usage](#usage)
+### * [Contributions](#contributions)
+### * [Tests](#tests)
+### * [Questions](#questions)
     
 ## Descrption 
-### asdf
+### Creates a Readme.md file based on user input
     
 ## Installation 
-### asdf
+### none
     
 ## Usage 
 ### asdf
@@ -15,9 +26,8 @@
 ## Tests 
 ### asdf
     
-## None
-    
 ## Questions 
-### asdf 
+### If you have any questions, you may contact me either 
+### GitHub: https://github.com/pedro83 
 ### Or 
-### asdf
+### Email: pedro83@hotmail.com
